@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    --color1: #16ac08; /* Highlight color */
+    --color2: #e7e7e7; /* Light background color */
+    --color3: #282c34; /* Dark background color */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+header {
+    background-color: var(--color3);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* More padding for a better look */
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+}
+
+a:hover {
+    color: var(--color1);
+}
+
+#banner {
+    display: flex;
+    gap: 50px;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/banner-image.jpg'); /* Add your banner image */
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Changed to flex-start for better alignment */
+    padding: 0px 100px;
+    gap: 40px;
+    color: white; /* White text for contrast */
+    animation: reveals 5s ease;
+}
+
+.content h1 {
+    font-size: 48px;
+}
+
+.content h1 span {
+    color: var(--color1);
+}
+
+.content p {
+    font-size: 24px;
+}
+
+#buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#buttons button {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: red;
+    border: none; /* Removed border */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+#buttons button:nth-child(1) {
+    background-color: black;
+}
+
+#buttons button:nth-child(2) {
+    background-color: white;
+    box-shadow: 2px 1px black;
+    color: black;
+}
+
+#buttons button:nth-child(2):hover {
+    background-color: var(--color1);
+}
+
+section {
+    padding: 50px 150px;
+}
+
+#about h2 {
+    text-align: center;
+}
+
+#about-sec {
+    display: flex;
+}
+
+#about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px;
+    font-size: 24px;
+}
+
+#stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat {
+    padding: 20px;
+    box-shadow: 2px 1px var(--color1);
+    border-radius: 15px;
+    background-color: white; /* White background for stats */
+    color: black; /* Black text */
+}
+
+.projects-sec {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project {
+    padding: 30px;
+    width: auto;
+    border: 1px solid black;
+    box-shadow: 5px 5px rgb(184, 184, 184);
+    border-radius: 15px;
+    background-color: white; /* White background for projects */
+}
+
+.project img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%; /* Full width for better responsive design */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.project button,
+.contact button {
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    border: none; /* Removed border */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.project button a:hover {
+    color: white;
+}
+
+.project button:hover,
+.contact button:hover {
+    background-color: var(--color1);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--color2); /* Light background for contrast */
+    border-radius: 15px; /* Rounded corners */
+    padding: 50px; /* Padding for spacing */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.contact h2 {
+    margin-bottom: 20px; /* Space below heading */
+    font-size: 36px; /* Slightly smaller font size for the heading */
+    color: var(--color3); /* Dark color for the heading */
+}
+
+.contact input,
+.contact textarea {
+    height: 50px; /* Height for inputs */
+    width: 100%; /* Full width for better alignment */
+    max-width: 500px; /* Max width for larger screens */
+    font-size: 18px; /* Font size */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid var(--color1); /* Border color */
+    padding: 10px; /* Padding inside input fields */
+    margin-bottom: 20px; /* Space below each input */
+    transition: border 0.3s; /* Transition effect */
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: var(--color1); /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.contact button {
+    background-color: var(--color1); /* Button background color */
+    color: white; /* Button text color */
+    padding: 15px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.contact button:hover {
+    background-color: darkgreen; /* Darker shade on hover */
+}
+
+footer {
+    background-color: var(--color3);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.heading {
+    font-size: 48px;
+    text-align: center;
+    text-decoration: 4px wavy var(--color1);
+    text-decoration-line: underline;
+    margin: 20px 0px;
+}
+
+@keyframes reveals {
+    0% {
+        position: relative;
+        left: -2000px;
+    }
+    100% {
+        position: relative;
+        left: 0px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    header {
+        flex-direction: column;
+    }
+}
+
+/* Mobile phone */
+@media screen and (max-width: 570px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        position: static;
+    }
+    .banner-image {
+        display: none;
+    }
+    .menu ul {
+        flex-direction: column;
+    }
+    #banner {
+        flex-direction: column-reverse;
+        margin-top: 50px;
+        align-items: center;
+    }
+    section {
+        padding: 20px 10px;
+    }
+    #about-sec {
+        flex-direction: column;
+        align-items: center;
+    }
+    #stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    .stat {
+        width: 80%;
+    }
+    .stat p {
+        overflow: hidden;
+    }
+    .projects-sec {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .project {
+        padding: 10px;
+        gap: 20px;
+    }
+    .project img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 571px) and (max-width: 992px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        position: static;
+    }
+    .menu ul {
+        flex-direction: column;
+    }
+    #banner {
+        flex-direction: column-reverse;
+        margin-top: 400px;
+        align-items: center;
+    }
+    section {
+        padding: 10px 10px;
+    }
+    #about-sec {
+        flex-direction: column;
+        align-items: center;
+    }
+    #stats {
+        flex-direction: column;
+    }
+    .projects-sec {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project {
+        padding: 10px;
+    }
+    .project img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 1200px) {
+    /* Additional styles for larger screen sizes can be added here */
+}
